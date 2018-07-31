@@ -1,6 +1,9 @@
 package com.gaurav;
 
-public class Triangle {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Triangle implements Shape,InitializingBean, DisposableBean{
 	
 	private Point pointA;
 	private Point pointB;
@@ -35,10 +38,32 @@ public class Triangle {
 	public void setPointC(Point pointC) {
 		this.pointC = pointC;
 	}
-
+	
+	public void initMethod()
+	{
+		System.out.println("init method");
+	}
+	public void destroyM()
+	{
+		System.out.println("destroy method");
+	}
 
 	public void draw()
 	{
 		System.out.println("This is traingle class"+ "Point A values are "+"("+pointA.getX()+","+pointA.getY()+")"+"Point B values are " +"("+pointB.getX()+","+pointB.getY()+")"+"Point C values are " +"("+pointC.getX()+","+pointC.getY()+")");
+	}
+
+
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 }
