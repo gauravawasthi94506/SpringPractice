@@ -15,6 +15,6 @@ public class Drawing {
 		/*factory.registerShutdownHook();*/
 		Shape tr=(Shape)factory.getBean("circle");
 		tr.draw();
-		System.out.println(factory.getMessage("name", null, "this is default message", null));;
+		
 	}
 }
